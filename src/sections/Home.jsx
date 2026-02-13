@@ -1,5 +1,5 @@
 import { useEffect, useState, useRef } from "react";
-import "./home.css";
+import "./Home.css";
 import profile from "../assets/profile.jpeg";
 
 const roles = [
