@@ -1,0 +1,49 @@
+/* ===== GLOBAL RESET ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  background-color: #0b0b12;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* REMOVE VITE DEMO STYLES ❌ */
+/* body flex / place-items REMOVED */
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+}
+
+p {
+  line-height: 1.6;
+  color: #9ca3af;
+}
+
+/* Links */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Buttons – base reset */
+button {
+  font-family: inherit;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background: none;
+}
+
+/* Optional: smooth scroll */
+html {
+  scroll-behavior: smooth;
+}

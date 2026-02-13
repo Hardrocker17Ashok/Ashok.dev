@@ -1,0 +1,150 @@
+/* =========================
+   EXPERIENCE SECTION
+   ========================= */
+
+.experience {
+  min-height: 100vh;
+  padding: 120px 8%;
+  background: linear-gradient(180deg, #0b0f19, #05070d);
+  color: #e5e7eb;
+}
+
+.experience-title {
+  text-align: center;
+  font-size: 42px;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 90px;
+  letter-spacing: 0.5px;
+}
+
+/* TIMELINE */
+.timeline {
+  max-width: 900px;
+  margin: 0 auto;
+  position: relative;
+  padding-left: 30px;
+}
+
+/* vertical line */
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 6px;
+  top: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+}
+
+/* ITEM */
+.timeline-item {
+  position: relative;
+  margin-bottom: 60px;
+}
+
+/* DOT */
+.timeline-dot {
+  position: absolute;
+  left: -2px;
+  top: 6px;
+  width: 14px;
+  height: 14px;
+  background: #6366f1;
+  border-radius: 50%;
+  box-shadow: 0 0 0 6px rgba(99, 102, 241, 0.15);
+}
+
+/* CONTENT */
+.timeline-content {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  padding: 28px 30px;
+  backdrop-filter: blur(14px);
+  transition: all 0.35s ease;
+}
+
+/* TEXT */
+.timeline-content h3 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 6px;
+}
+
+.timeline-content h4 {
+  font-size: 15px;
+  font-weight: 500;
+  color: #c7d2fe;
+  margin-bottom: 10px;
+}
+
+.timeline-duration {
+  display: inline-block;
+  font-size: 13px;
+  color: #9ca3af;
+  margin-bottom: 12px;
+}
+
+.timeline-content p {
+  font-size: 15px;
+  line-height: 1.7;
+  color: #d1d5db;
+}
+
+/* HOVER */
+.timeline-content:hover {
+  transform: translateY(-6px);
+  border-color: rgba(99, 102, 241, 0.6);
+  box-shadow: 0 22px 55px rgba(99, 102, 241, 0.18);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .experience {
+    padding: 90px 6%;
+  }
+
+  .experience-title {
+    font-size: 34px;
+    margin-bottom: 60px;
+  }
+
+  .timeline {
+    padding-left: 24px;
+  }
+}
+
+/* =========================
+   EXPERIENCE LINKS
+   ========================= */
+
+.experience-links {
+  margin-top: 18px;
+  display: flex;
+  gap: 14px;
+}
+
+.experience-links a {
+  font-size: 13px;
+  padding: 8px 16px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 500;
+  border: 1px solid rgba(99, 102, 241, 0.5);
+  color: #c7d2fe;
+  transition: all 0.3s ease;
+}
+
+.experience-links a:hover {
+  background: #6366f1;
+  color: #ffffff;
+  box-shadow: 0 8px 20px rgba(99, 102, 241, 0.3);
+}
+
