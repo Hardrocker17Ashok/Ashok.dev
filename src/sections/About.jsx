@@ -5,7 +5,8 @@ import profileImg from "../assets/profile.jpeg";
 
 const About = () => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { amount: 0.3, once: true });
+  const isInView = useInView(ref, { amount: 0.3, once: false });
+
 
   return (
     <section id="about" className="about" ref={ref}>
