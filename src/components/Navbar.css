@@ -107,9 +107,9 @@
     border: 1px solid transparent;
     background-clip: padding-box;
 
-    box-shadow: 
-      0 8px 32px rgba(0,0,0,0.4),
-      0 0 0 1px rgba(255,255,255,0.05);
+    box-shadow:
+      0 8px 32px rgba(0, 0, 0, 0.4),
+      0 0 0 1px rgba(255, 255, 255, 0.05);
 
     flex-direction: column;
     gap: 18px;
@@ -127,17 +127,15 @@
     inset: -1px;
     border-radius: 18px;
     padding: 1px;
-    background: linear-gradient(
-      135deg,
-      #ec4899,
-      #8b5cf6,
-      #3b82f6
-    );
+    background: linear-gradient(135deg,
+        #ec4899,
+        #8b5cf6,
+        #3b82f6);
     -webkit-mask:
       linear-gradient(#000 0 0) content-box,
       linear-gradient(#000 0 0);
     -webkit-mask-composite: xor;
-            mask-composite: exclude;
+    mask-composite: exclude;
     pointer-events: none;
   }
 
@@ -162,19 +160,40 @@
   .nav-links.mobile-active li {
     opacity: 1;
     transform: translateX(0);
+    pointer-events: auto;
   }
 
-  .nav-links.mobile-active li:nth-child(1) { transition-delay: 0.05s; }
-  .nav-links.mobile-active li:nth-child(2) { transition-delay: 0.1s; }
-  .nav-links.mobile-active li:nth-child(3) { transition-delay: 0.15s; }
-  .nav-links.mobile-active li:nth-child(4) { transition-delay: 0.2s; }
-  .nav-links.mobile-active li:nth-child(5) { transition-delay: 0.25s; }
-  .nav-links.mobile-active li:nth-child(6) { transition-delay: 0.3s; }
-  .nav-links.mobile-active li:nth-child(7) { transition-delay: 0.35s; }
+  .nav-links.mobile-active li:nth-child(1) {
+    transition-delay: 0.05s;
+  }
+
+  .nav-links.mobile-active li:nth-child(2) {
+    transition-delay: 0.1s;
+  }
+
+  .nav-links.mobile-active li:nth-child(3) {
+    transition-delay: 0.15s;
+  }
+
+  .nav-links.mobile-active li:nth-child(4) {
+    transition-delay: 0.2s;
+  }
+
+  .nav-links.mobile-active li:nth-child(5) {
+    transition-delay: 0.25s;
+  }
+
+  .nav-links.mobile-active li:nth-child(6) {
+    transition-delay: 0.3s;
+  }
+
+  .nav-links.mobile-active li:nth-child(7) {
+    transition-delay: 0.35s;
+  }
 
   /* iOS Hover Effect */
   .nav-links li:hover {
-    background: rgba(255,255,255,0.05);
+    background: rgba(255, 255, 255, 0.05);
     border-radius: 10px;
     color: #ec4899;
     transform: translateX(5px);
@@ -183,8 +202,8 @@
   .nav-links li::after {
     display: none;
   }
-
 }
+
 
 
 
