@@ -1,6 +1,7 @@
 import { useEffect, useState, useRef } from "react";
 import "./Home.css";
-import profile from "../assets/profile.jpeg";
+import profile from "../assets/profile11.jpeg";
+// /assets/profile11.jpeg
 
 const roles = [
   "Software Developer",
@@ -113,14 +114,17 @@ const Home = () => {
         </div>
 
         {/* RIGHT IMAGE WITH 3D EFFECT */}
+        {/* RIGHT IMAGE WITH 3D EFFECT */}
         <div
           className="ig-wrapper"
           ref={imageRef}
           onMouseMove={handleMouseMove}
           onMouseLeave={resetTilt}
         >
+          <div className="image-bg-glow"></div>
           <img src={profile} alt="Ashok Sharma" className="ig-photo" />
         </div>
+
 
       </div>
     </section>

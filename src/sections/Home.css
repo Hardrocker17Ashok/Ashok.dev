@@ -100,62 +100,76 @@ min-height: 100svh;
 
 /* ================= INSTAGRAM RESTYLE IMAGE (CLEAN) ================= */
 
+/* ===== PREMIUM IMAGE CARD ===== */
+
 .ig-wrapper {
   position: relative;
-  width: 280px;          /* balanced size */
+  width: 320px;
   aspect-ratio: 3 / 4;
   margin-left: auto;
-  overflow: hidden;
+  border-radius: 24px;
+  padding: 4px;
+  isolation: isolate;
+
+
+  background: linear-gradient(
+    135deg,
+    #ec4899,
+    #8b5cf6,
+    #06b6d4
+  );
+
+  transition: transform 0.3s ease;
 }
 
-/* image */
+.ig-wrapper::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 24px;
+  padding: 2px;
+  background: linear-gradient(
+    135deg,
+    rgba(255,255,255,0.4),
+    rgba(255,255,255,0.1)
+  );
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+}
+
 .ig-photo {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  border-radius: 50px;
 
-  /* restyle state */
-  filter: blur(12px) contrast(1.25) saturate(0.9);
-  transition: filter 0.8s ease;
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(12px);
+
+  box-shadow:
+    0 20px 60px rgba(0,0,0,0.6),
+    0 0 40px rgba(236, 72, 153, 0.4);
+
+  transition: 0.3s ease;
 }
 
-/* grain / noise overlay */
-.ig-noise {
+
+
+
+/* ===== IMAGE GLOW BACKGROUND ===== */
+.image-bg-glow {
   position: absolute;
-  inset: 0;
-
-  background-image:
-    repeating-radial-gradient(
-      circle at 50% 50%,
-      rgba(255,255,255,0.35) 0,
-      rgba(255,255,255,0.35) 1px,
-      transparent 1px,
-      transparent 3px
-    );
-
-  opacity: 0.6;
-  animation: grainMove 6s linear infinite;
-  pointer-events: none;
-
-  transition: opacity 0.7s ease;
-}
-
-/* hover → clear */
-.ig-wrapper:hover .ig-photo {
-  filter: blur(0) contrast(1) saturate(1);
-}
-
-.ig-wrapper:hover .ig-noise {
-  opacity: 0;
-}
-
-/* subtle grain motion */
-@keyframes grainMove {
-  0% { transform: translate(0,0); }
-  25% { transform: translate(-4px, 3px); }
-  50% { transform: translate(3px, -4px); }
-  75% { transform: translate(-3px, -3px); }
-  100% { transform: translate(0,0); }
+  width: 350px;
+  height: 350px;
+  background: radial-gradient(circle, #ec4899, transparent 70%);
+  filter: blur(80px);
+  z-index: -1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 /* mobile */
