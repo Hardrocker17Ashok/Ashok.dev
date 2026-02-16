@@ -3,7 +3,7 @@
    ========================= */
 
 .services {
-  min-height: 100vh;
+  min-height: 100svh;
   padding: 120px 8%;
   background: linear-gradient(180deg, #0b0f19, #05070d);
   color: #e5e7eb;

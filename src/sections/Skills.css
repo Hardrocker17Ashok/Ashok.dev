@@ -1,5 +1,6 @@
 .skills {
-  min-height: 100vh;
+  min-height: 100svh;
+
   padding: 120px 8%;
   background: radial-gradient(circle at top, #111827, #05070d);
   color: #e5e7eb;

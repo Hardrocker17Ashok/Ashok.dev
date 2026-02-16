@@ -46,4 +46,5 @@ button {
 /* Optional: smooth scroll */
 html {
   scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
 }

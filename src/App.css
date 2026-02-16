@@ -40,3 +40,38 @@
 .read-the-docs {
   color: #888;
 }
+
+/* ================= MOBILE PERFORMANCE MODE ================= */
+
+@media (max-width: 768px) {
+
+  /* Disable heavy blur effects */
+  .rope-card,
+  .contact-image img,
+  .ig-photo,
+  .skill-category {
+    backdrop-filter: none !important;
+  }
+
+  /* Reduce heavy shadows */
+  .rope-card,
+  .contact-image img,
+  .ig-photo {
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3) !important;
+  }
+
+  /* Disable floating / heavy animations */
+  .contact-image img,
+  .ig-photo {
+    animation: none !important;
+    transform: none !important;
+  }
+
+  /* Remove perspective if used */
+  .ig-wrapper {
+    transform: none !important;
+    perspective: none !important;
+  }
+
+}
+

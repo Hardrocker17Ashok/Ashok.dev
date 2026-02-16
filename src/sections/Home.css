@@ -19,7 +19,8 @@ body {
 
 /* ================= LAYOUT ================= */
 .home {
-  min-height: 100vh;
+min-height: 100svh;
+
   display: flex;
   align-items: center;
   padding: 56px 24px;
