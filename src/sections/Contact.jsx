@@ -12,7 +12,8 @@ const Contact = () => {
       ([entry]) => {
         if (entry.isIntersecting) {
           setVisible(true);
-          observer.disconnect();
+        } else {
+          setVisible(false); // 👈 allow re-animation
         }
       },
       { threshold: 0.3 }

@@ -158,11 +158,65 @@ body {
 }
 
 /* mobile */
-@media (max-width: 900px) {
+/* ================= MOBILE RESPONSIVE PREMIUM ================= */
+
+@media (max-width: 768px) {
+
+  .home {
+    padding: 100px 20px 60px;
+    text-align: center;
+  }
+
+  .home-wrapper {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+
+  .home-content {
+    max-width: 100%;
+  }
+
+  .home-title {
+    font-size: 32px;
+    line-height: 1.3;
+  }
+
+  .home-subtitle {
+    font-size: 16px;
+  }
+
+  .home-buttons {
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .btn {
+    width: 100%;
+    max-width: 260px;
+    font-size: 14px;
+    padding: 13px 20px;
+  }
+
   .ig-wrapper {
-    margin: 40px auto 0;
+    width: 240px;
+    margin: 0 auto;
+    transform: none !important;
+  }
+
+  .ig-photo {
+    border-radius: 18px;
   }
 }
+
+
+
+
+
+
+
+
 
 
 /* ================= CURSOR ================= */

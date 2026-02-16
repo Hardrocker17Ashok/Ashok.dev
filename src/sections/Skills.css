@@ -79,16 +79,48 @@
   box-shadow: 0 0 10px rgba(99, 102, 241, 0.6);
 }
 
-/* RESPONSIVE */
+/* ================= MOBILE FIX FOR SKILLS ================= */
+
 @media (max-width: 768px) {
+
   .skills {
-    padding: 90px 6%;
+    padding: 80px 5%;
   }
 
-  .skills-title {
-    font-size: 34px;
+  .skills-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
   }
+
+  .skill-category {
+    padding: 25px;
+  }
+
+  .skill-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap; /* allow wrapping */
+  }
+
+  .skill-name {
+    flex: 1;
+    min-width: 0;
+    word-break: break-word; /* prevent overflow */
+  }
+
+  .skill-percent {
+    white-space: nowrap;
+    font-size: 13px;
+  }
+
+  .progress-bar {
+    width: 100%;
+  }
+
 }
+
 
 .category-title {
   display: flex;
