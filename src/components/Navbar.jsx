@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import "./Navbar.css";
 
-// Icons
 import {
   FaHome,
   FaUser,
@@ -10,15 +9,19 @@ import {
   FaGraduationCap,
   FaBriefcase,
   FaEnvelope,
+  FaBars,
+  FaTimes,
 } from "react-icons/fa";
 
 const Navbar = () => {
   const [active, setActive] = useState("home");
+  const [mobileOpen, setMobileOpen] = useState(false);
 
   const scrollToSection = (id) => {
     const section = document.getElementById(id);
     if (section) {
       section.scrollIntoView({ behavior: "smooth" });
+      setMobileOpen(false); // 👈 auto close after click
     }
   };
 
@@ -44,67 +47,37 @@ const Navbar = () => {
   return (
     <nav className="navbar">
       <div className="navbar-container">
-        {/* Logo */}
+
         <div className="logo" onClick={() => scrollToSection("home")}>
           Ashok<span>.</span>
         </div>
 
-        {/* Menu */}
-        <ul className="nav-links">
-          <li
-            className={active === "home" ? "active" : ""}
-            onClick={() => scrollToSection("home")}
-          >
-            <FaHome style={{ marginRight: "8px" }} />
-            Home
-          </li>
+        {/* Hamburger Icon (Mobile Only) */}
+        <div className="mobile-toggle" onClick={() => setMobileOpen(!mobileOpen)}>
+          {mobileOpen ? <FaTimes /> : <FaBars />}
+        </div>
 
-          <li
-            className={active === "about" ? "active" : ""}
-            onClick={() => scrollToSection("about")}
-          >
-            <FaUser style={{ marginRight: "8px" }} />
-            About
+        <ul className={`nav-links ${mobileOpen ? "mobile-active" : ""}`}>
+          <li className={active === "home" ? "active" : ""} onClick={() => scrollToSection("home")}>
+            <FaHome /> Home
           </li>
-
-          <li
-            className={active === "services" ? "active" : ""}
-            onClick={() => scrollToSection("services")}
-          >
-            <FaCogs style={{ marginRight: "8px" }} />
-            Services
+          <li className={active === "about" ? "active" : ""} onClick={() => scrollToSection("about")}>
+            <FaUser /> About
           </li>
-
-          <li
-            className={active === "skills" ? "active" : ""}
-            onClick={() => scrollToSection("skills")}
-          >
-            <FaCode style={{ marginRight: "8px" }} />
-            Skills
+          <li className={active === "services" ? "active" : ""} onClick={() => scrollToSection("services")}>
+            <FaCogs /> Services
           </li>
-
-          <li
-            className={active === "education" ? "active" : ""}
-            onClick={() => scrollToSection("education")}
-          >
-            <FaGraduationCap style={{ marginRight: "8px" }} />
-            Education
+          <li className={active === "skills" ? "active" : ""} onClick={() => scrollToSection("skills")}>
+            <FaCode /> Skills
           </li>
-
-          <li
-            className={active === "experience" ? "active" : ""}
-            onClick={() => scrollToSection("experience")}
-          >
-            <FaBriefcase style={{ marginRight: "8px" }} />
-            Experience
+          <li className={active === "education" ? "active" : ""} onClick={() => scrollToSection("education")}>
+            <FaGraduationCap /> Education
           </li>
-
-          <li
-            className={active === "contact" ? "active" : ""}
-            onClick={() => scrollToSection("contact")}
-          >
-            <FaEnvelope style={{ marginRight: "8px" }} />
-            Contact
+          <li className={active === "experience" ? "active" : ""} onClick={() => scrollToSection("experience")}>
+            <FaBriefcase /> Experience
+          </li>
+          <li className={active === "contact" ? "active" : ""} onClick={() => scrollToSection("contact")}>
+            <FaEnvelope /> Contact
           </li>
         </ul>
       </div>

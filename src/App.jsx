@@ -13,30 +13,34 @@ import About from "./sections/About";
 
 function App() {
   const [loading, setLoading] = useState(true);
+  const [showContent, setShowContent] = useState(false);
 
   useEffect(() => {
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 2000); // 2 seconds loader
+      setTimeout(() => {
+        setShowContent(true);
+      }, 300); // small delay for smooth transition
+    }, 2000);
 
     return () => clearTimeout(timer);
   }, []);
 
-  if (loading) {
-    return <Loader />;
-  }
-
   return (
     <>
-      <Navbar />
-      <Home />
-      <About />
-      <Services />
-      <Skills />
-      <Education />
-      <Experience />
-      <Contact />
-      <Footer />
+      {loading && <Loader />}
+
+      <div className={`main-content ${showContent ? "fade-in" : ""}`}>
+        <Navbar />
+        <Home />
+        <About />
+        <Services />
+        <Skills />
+        <Education />
+        <Experience />
+        <Contact />
+        <Footer />
+      </div>
     </>
   );
 }
