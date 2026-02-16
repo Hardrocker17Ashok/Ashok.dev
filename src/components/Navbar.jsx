@@ -1,4 +1,5 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
+
 import "./Navbar.css";
 
 import {
@@ -17,32 +18,58 @@ const Navbar = () => {
   const [active, setActive] = useState("home");
   const [mobileOpen, setMobileOpen] = useState(false);
 
+  const menuRef = useRef(null);
+  const toggleRef = useRef(null);
+
   const scrollToSection = (id) => {
     const section = document.getElementById(id);
     if (section) {
       section.scrollIntoView({ behavior: "smooth" });
-      setMobileOpen(false); // 👈 auto close after click
+      setMobileOpen(false); // auto close after click
     }
   };
 
   useEffect(() => {
-    const sections = document.querySelectorAll("section");
+  const sections = document.querySelectorAll("section");
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setActive(entry.target.id);
-          }
-        });
-      },
-      { threshold: 0.6 }
-    );
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setActive(entry.target.id);
+        }
+      });
+    },
+    {
+      rootMargin: "-40% 0px -40% 0px"
+    }
+  );
 
-    sections.forEach((section) => observer.observe(section));
+  sections.forEach((section) => observer.observe(section));
 
-    return () => observer.disconnect();
-  }, []);
+  return () => observer.disconnect();
+}, []);
+
+  /* ✅ Outside Click Close Logic */
+  useEffect(() => {
+    const handleOutsideClick = (e) => {
+      if (
+        mobileOpen &&
+        menuRef.current &&
+        !menuRef.current.contains(e.target) &&
+        toggleRef.current &&
+        !toggleRef.current.contains(e.target)
+      ) {
+        setMobileOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleOutsideClick);
+
+    return () => {
+      document.removeEventListener("mousedown", handleOutsideClick);
+    };
+  }, [mobileOpen]);
 
   return (
     <nav className="navbar">
@@ -53,11 +80,18 @@ const Navbar = () => {
         </div>
 
         {/* Hamburger Icon (Mobile Only) */}
-        <div className="mobile-toggle" onClick={() => setMobileOpen(!mobileOpen)}>
+        <div
+          ref={toggleRef}
+          className="mobile-toggle"
+          onClick={() => setMobileOpen(!mobileOpen)}
+        >
           {mobileOpen ? <FaTimes /> : <FaBars />}
         </div>
 
-        <ul className={`nav-links ${mobileOpen ? "mobile-active" : ""}`}>
+        <ul
+          ref={menuRef}
+          className={`nav-links ${mobileOpen ? "mobile-active" : ""}`}
+        >
           <li className={active === "home" ? "active" : ""} onClick={() => scrollToSection("home")}>
             <FaHome /> Home
           </li>
@@ -80,6 +114,7 @@ const Navbar = () => {
             <FaEnvelope /> Contact
           </li>
         </ul>
+
       </div>
     </nav>
   );

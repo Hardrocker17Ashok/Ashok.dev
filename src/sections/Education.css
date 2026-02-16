@@ -193,24 +193,96 @@
 }
 
 /* Responsive */
+/* ================= MOBILE EDUCATION CLEAN VERSION ================= */
+
 @media (max-width: 900px) {
 
+  .education {
+    padding: 80px 6%;
+  }
+
+  .education-title {
+    font-size: 32px;
+    margin-bottom: 60px;
+  }
+
+  /* Remove center rope completely */
   .rope-line,
   .start-circle,
-  .end-circle,
-  .bubble {
+  .end-circle {
     display: none;
+  }
+
+  .rope-container {
+    position: relative;
   }
 
   .rope-item {
     width: 100%;
     left: 0 !important;
     padding: 0;
-    margin-bottom: 60px;
-    justify-content: center;
+    margin-bottom: 50px;
+    justify-content: flex-start;
+  }
+
+  /* Add left vertical line */
+  .rope-container::before {
+    content: "";
+    position: absolute;
+    left: 8px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(#6366f1, #22d3ee);
+    opacity: 0.5;
+  }
+
+  /* Bubble on left */
+  .bubble {
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 28px;
+    width: 14px;
+    height: 14px;
   }
 
   .rope-card {
     width: 100%;
+    margin-left: 30px;
+    padding: 18px;
+    flex-direction: column;
+    align-items: flex-start;
   }
+
+  .rope-card img {
+    width: 50px;
+    height: 50px;
+  }
+
+  /* Fix duration overflow */
+  .edu-header {
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 6px;
+  }
+
+  .edu-header h3 {
+    font-size: 15px;
+  }
+
+  .edu-duration {
+    font-size: 11px;
+    white-space: normal; /* allow wrap */
+    flex-shrink: 1;
+  }
+
+  .rope-text p {
+    font-size: 13px;
+  }
+
+  .edu-score {
+    font-size: 12px;
+  }
+
 }
