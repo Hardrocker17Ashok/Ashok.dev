@@ -3,9 +3,10 @@
    ========================= */
 
 .experience {
-  min-height: 100svh;
+  min-height: auto;
+  padding: 100px 6%;
 
-  padding: 120px 8%;
+  /* padding: 120px 8%; */
   background: linear-gradient(180deg, #0b0f19, #05070d);
   color: #e5e7eb;
 }
@@ -25,6 +26,7 @@
   margin: 0 auto;
   position: relative;
   padding-left: 30px;
+  display: block;
 }
 
 /* vertical line */
@@ -35,12 +37,11 @@
   top: 0;
   width: 2px;
   height: 100%;
-  background: linear-gradient(
-    to bottom,
-    transparent,
-    rgba(255, 255, 255, 0.2),
-    transparent
-  );
+  min-height: 100%;
+  background: linear-gradient(to bottom,
+      transparent,
+      rgba(255, 255, 255, 0.2),
+      transparent);
 }
 
 /* ITEM */
@@ -118,7 +119,9 @@
   }
 
   .timeline {
+   
     padding-left: 24px;
+  
   }
 }
 
@@ -148,4 +151,3 @@
   color: #ffffff;
   box-shadow: 0 8px 20px rgba(99, 102, 241, 0.3);
 }
-

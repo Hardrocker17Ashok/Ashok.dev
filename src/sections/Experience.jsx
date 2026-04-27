@@ -56,7 +56,10 @@ const experienceData = [
 
 const Experience = () => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { amount: 0.3 });
+  const isInView = useInView(ref, {
+    amount: 0.1,
+    once: true,
+  });
 
   return (
     <section id="experience" className="experience" ref={ref}>
@@ -74,11 +77,8 @@ const Experience = () => {
           <motion.div
             key={index}
             className="timeline-item"
-            initial={{ opacity: 0, x: index % 2 === 0 ? -40 : 40 }}
-            animate={{
-              opacity: isInView ? 1 : 0,
-              x: isInView ? 0 : index % 2 === 0 ? -40 : 40,
-            }}
+           initial={{ opacity: 0, x: index % 2 === 0 ? -40 : 40 }}
+animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{
               duration: 0.6,
               delay: index * 0.15,
