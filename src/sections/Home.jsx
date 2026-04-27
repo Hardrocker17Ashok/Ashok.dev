@@ -96,23 +96,18 @@ const Home = () => {
           <h1 className="home-title">
             Hi, I’m <span className="accent">Ashok Sharma</span>
           </h1>
-          <div
-            className="linkedin-badge"
-            data-locale="en_US"
-            data-size="medium"
-            data-theme="dark"
-            data-type="HORIZONTAL"
-            data-vanity="artifical-ashok-sharma"
-            data-version="v1"
+          <a
+            href="https://in.linkedin.com/in/artifical-ashok-sharma"
+            target="_blank"
+            rel="noreferrer"
+            className="linkedin-premium"
           >
-            <a
-              href="https://in.linkedin.com/in/artifical-ashok-sharma"
-              target="_blank"
-              className="linkedin-btn"
-            >
-              🔗 Ashok Sharma (LinkedIn)
-            </a>
-          </div>
+            <div className="li-icon">in</div>
+            <div className="li-text">
+              <span className="li-title">Ashok Sharma</span>
+              <span className="li-sub">View LinkedIn Profile</span>
+            </div>
+          </a>
           <p className="home-subtitle">
             <span className="typing-text">{text}</span>
             <span className="cursor" />
