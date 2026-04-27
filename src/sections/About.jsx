@@ -1,7 +1,7 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import "./About.css";
-import profileImg from "../assets/profile.jpeg";
+import profileImg from "../assets/pp1.jpeg";
 
 const About = () => {
   const ref = useRef(null);
@@ -19,44 +19,46 @@ const About = () => {
         About Me
       </motion.h2>
 
-      <div className="about-content">
-        {/* LEFT TEXT */}
-        <motion.div
-          className="about-text"
-          initial={{ opacity: 0, x: -40 }}
-          animate={{ opacity: isInView ? 1 : 0, x: isInView ? 0 : -40 }}
-          transition={{ duration: 0.7 }}
-        >
-          <p>
-            I’m a <strong>Full Stack Software Developer</strong> focused on
-            building scalable, real-world applications with clean architecture
-            and maintainable systems.
-          </p>
+     <div className="about-content">
 
-          <p>
-            My experience includes <strong>backend systems, REST APIs,
-            frontend UI performance</strong>, and integrating intelligent
-            solutions into practical products.
-          </p>
+  {/* LEFT IMAGE */}
+  <motion.div
+    className="about-image"
+    initial={{ opacity: 0, x: -40 }}
+    animate={{ opacity: isInView ? 1 : 0, x: isInView ? 0 : -40 }}
+    transition={{ duration: 0.7 }}
+  >
+    <div className="image-frame">
+      <img src={profileImg} alt="Ashok Sharma" />
+    </div>
+  </motion.div>
 
-          <p>
-            I believe in writing code that is simple, scalable, and built for
-            long-term growth.
-          </p>
-        </motion.div>
+  {/* RIGHT TEXT */}
+  <motion.div
+    className="about-text"
+    initial={{ opacity: 0, x: 40 }}
+    animate={{ opacity: isInView ? 1 : 0, x: isInView ? 0 : 40 }}
+    transition={{ duration: 0.7 }}
+  >
+    <p>
+      I’m a <strong>Full Stack Software Developer</strong> focused on
+      building scalable, real-world applications with clean architecture
+      and maintainable systems.
+    </p>
 
-        {/* RIGHT IMAGE */}
-        <motion.div
-          className="about-image"
-          initial={{ opacity: 0, x: 40 }}
-          animate={{ opacity: isInView ? 1 : 0, x: isInView ? 0 : 40 }}
-          transition={{ duration: 0.7 }}
-        >
-          <div className="image-frame">
-            <img src={profileImg} alt="Ashok Sharma" />
-          </div>
-        </motion.div>
-      </div>
+    <p>
+      My experience includes <strong>backend systems, REST APIs,
+      frontend UI performance</strong>, and integrating intelligent
+      solutions into practical products.
+    </p>
+
+    <p>
+      I believe in writing code that is simple, scalable, and built for
+      long-term growth.
+    </p>
+  </motion.div>
+
+</div>
     </section>
   );
 };

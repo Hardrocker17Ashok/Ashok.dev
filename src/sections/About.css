@@ -184,34 +184,94 @@
 
 
 /* IMAGE SECTION */
-.about-image {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-/* FRAME DESIGN */
 .image-frame {
-  width: 320px;
-  height: 380px;
-  padding: 6px;
+  width: 340px;
+  height: 420px;
   border-radius: 30px;
-  background: linear-gradient(135deg, #6366f1, #8b5cf6, #06b6d4);
-  background-size: 300% 300%;
-  animation: gradientMove 6s ease infinite;
   overflow: hidden;
+  position: relative;
 }
 
 .image-frame img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 25px;
+  border-radius: 30px;
+
+  /* ✅ Normal look */
+  transform: scale(1); 
+  filter: none;
+
+  /* Soft shadow (professional) */
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+
   transition: 0.4s ease;
 }
 
 .image-frame img:hover {
-  transform: scale(1.05);
+  transform: scale(1.03); /* slight hover only */
+}
+
+/* 🔥 LIGHT GLOW LAYER */
+.about-image::after {
+  content: "";
+  position: absolute;
+  width: 500px;
+  height: 500px;
+
+  background: conic-gradient(
+    from 0deg,
+    rgba(99,102,241,0.15),
+    transparent,
+    rgba(139,92,246,0.15),
+    transparent
+  );
+
+  filter: blur(120px);
+  z-index: -2;
+
+  animation: rotateLight 10s linear infinite;
+}
+
+@keyframes rotateLight {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+
+
+
+
+.about-image::before {
+  content: "";
+  position: absolute;
+  width: 420px;
+  height: 420px;
+  border-radius: 50%;
+
+  background: radial-gradient(
+    circle,
+    rgba(99, 102, 241, 0.35),
+    rgba(139, 92, 246, 0.25),
+    transparent 70%
+  );
+
+  filter: blur(100px);
+  z-index: -1;
+
+  animation: glowMove 6s ease-in-out infinite;
+}
+
+@keyframes glowMove {
+  0% {
+    transform: scale(1) translate(0, 0);
+  }
+  50% {
+    transform: scale(1.1) translate(10px, -10px);
+  }
+  100% {
+    transform: scale(1) translate(0, 0);
+  }
 }
 
 /* Gradient Animation */
