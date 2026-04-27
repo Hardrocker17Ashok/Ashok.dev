@@ -41,7 +41,7 @@ const Navbar = () => {
       });
     },
     {
-      rootMargin: "-40% 0px -40% 0px"
+      rootMargin: "-20% 0px -60% 0px"
     }
   );
 
