@@ -4,12 +4,28 @@ import "./Experience.css";
 
 const experienceData = [
   {
+    company: "NayaLook",
+    role: "Android Developer (AI-powered App)",
+    duration: "2026",
+    desc: "Developed an AI-powered hairstyle preview Android application that allows users to capture or upload their photo and try different hairstyles virtually. Integrated image processing and AI-based styling to provide realistic previews. Focused on smooth user experience, fast processing, and modern UI design.",
+    live: "https://play.google.com/store/apps/details?id=com.nayalook.app&pcampaignid=web_share",
+    code: "https://github.com/Hardrocker17Ashok/nayalook-app"
+  },
+  {
     company: "Tizell.com",
-    role: "Full Stack Developer",
+    role: "Full Stack eCommerce Developer",
     duration: "2025",
     desc: "Developed a full-stack eCommerce web application with secure authentication, product management, cart system, and payment integration. Built scalable backend APIs and responsive frontend UI with focus on performance and clean architecture.",
     live: "https://tizell.com",
     code: "https://github.com/Hardrocker17Ashok/Tizell.git"
+  },
+  {
+    company: "Royal Raj",
+    role: "Web Developer (Restaurant & Hotel Booking System)",
+    duration: "2026",
+    desc: "Built a premium full-stack website for a restaurant and hotel business, featuring online table reservations, room booking system, and interactive digital menu. Designed a visually appealing and responsive UI with smooth animations and optimized performance. Developed scalable backend APIs for booking management and ensured a seamless user experience across devices.",
+    live: "https://royal-raj.vercel.app/",
+    code: "https://github.com/Hardrocker17Ashok/Royal-Raj.git"
   },
   {
     company: "Waah Restaurant",
@@ -21,7 +37,7 @@ const experienceData = [
   },
   {
     company: "Chit Chat App",
-    role: "Full Stack Developer",
+    role: "Full Stack Developer (Real-time Chat Application)",
     duration: "2024",
     desc: "Created a real-time chat application with authentication, private messaging, and responsive UI. Implemented scalable backend with secure data handling and real-time communication features for smooth messaging experience.",
     live: "https://github.com/Hardrocker17Ashok/Chit-Chat.git",
@@ -77,7 +93,7 @@ const Experience = () => {
               <span className="timeline-duration">{exp.duration}</span>
               <p>{exp.desc}</p>
 
-              
+
               <div className="experience-links">
                 <a href={exp.live} target="_blank" rel="noreferrer">
                   Live

@@ -54,7 +54,7 @@ const Home = () => {
 
   const openResume = () => {
     window.open(
-      "https://drive.google.com/file/d/15sfJdOdwuTry7JnM1EpeDiPgMdHzGxmF/view",
+      "https://drive.google.com/file/d/15EksJsRieTJz93qT6QzrUl37eDXCDSa6/view?usp=sharing",
       "_blank"
     );
   };

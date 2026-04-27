@@ -7,6 +7,7 @@ import {
   FaJava,
   FaReact,
   FaGitAlt,
+  FaPython,
   FaDocker
 } from "react-icons/fa";
 
@@ -28,6 +29,7 @@ const skillData = [
     icon: <FaServer />,
     skills: [
       { name: "Java", level: 90, icon: <FaJava /> },
+      { name: "Python", level: 75, icon: <FaPython /> },
       { name: "Spring Boot", level: 85, icon: <SiSpringboot /> },
       { name: "REST APIs", level: 85, icon: <FaCode /> },
       { name: "MySQL", level: 80, icon: <SiMysql /> },
