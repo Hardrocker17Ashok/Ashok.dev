@@ -8,12 +8,15 @@ const Contact = () => {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
+    // ✅ IMPORTANT: Initialize EmailJS (fix for 412 error)
+    emailjs.init("Otc6yfTUzwQ4A4XHF");
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
           setVisible(true);
         } else {
-          setVisible(false); // 👈 allow re-animation
+          setVisible(false);
         }
       },
       { threshold: 0.3 }
@@ -29,17 +32,16 @@ const Contact = () => {
 
     emailjs
       .sendForm(
-        "service_f2o1ocq",   
-        "template_gjqqn2e",  
-        formRef.current,
-        "Otc6yfTUzwQ4A4XHF"   
+        "service_f2o1ocq",
+        "template_gjqqn2e",
+        formRef.current
       )
       .then(() => {
         alert("Message Sent Successfully ✅");
         formRef.current.reset();
       })
       .catch((error) => {
-        console.log(error);
+        console.log("FULL ERROR:", error);
         alert("Something went wrong ❌");
       });
   };
